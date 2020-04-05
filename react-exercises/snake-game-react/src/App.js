@@ -22,6 +22,7 @@ const initialState = {
   speed: 200,
   direction: 'RIGHT',
   snakeDots: [[0, 0], [DOT_SIZE, 0]],
+  bestScore: 0,
 };
 
 class App extends React.PureComponent {
@@ -45,19 +46,28 @@ class App extends React.PureComponent {
   }
 
   onKeyDown = e => {
+    const {direction} = this.state;
     e = e || window.event;
     switch (e.keyCode) {
       case 38:
-        this.setState({direction: 'UP'});
+        if (direction !== 'DOWN') {
+          this.setState({direction: 'UP'});
+        }
         break;
       case 40:
-        this.setState({direction: 'DOWN'});
+        if (direction !== 'UP') {
+          this.setState({direction: 'DOWN'});
+        }
         break;
       case 37:
-        this.setState({direction: 'LEFT'});
+        if (direction !== 'RIGHT') {
+          this.setState({direction: 'LEFT'});
+        }
         break;
       case 39:
-        this.setState({direction: 'RIGHT'});
+        if (direction !== 'LEFT') {
+          this.setState({direction: 'RIGHT'});
+        }
         break;
       default:
         return;
@@ -101,10 +111,12 @@ class App extends React.PureComponent {
   }
 
   onGameOver() {
-    const {gameCount} = this.state;
+    const {gameCount, snakeDots, bestScore} = this.state;
+    const currentScore = snakeDots.length - 2;
     this.setState({
       alive: false,
       gameCount: gameCount + 1,
+      bestScore: currentScore > bestScore ? currentScore : bestScore,
     });
   }
 
@@ -142,28 +154,37 @@ class App extends React.PureComponent {
 
   startGame = () => {
     this.setState({
-      ...initialState,
+      direction: 'RIGHT',
+      snakeDots: [[0, 0], [DOT_SIZE, 0]],
       alive: true,
     });
   };
 
   render() {
-    const {alive, gameCount, snakeDots, food} = this.state;
+    const {alive, gameCount, snakeDots, food, bestScore} = this.state;
     if (!alive) {
       return (
         <InstructionBoard
           isFirstGame={!gameCount}
-          score={snakeDots.length - 2}
+          score={(snakeDots.length - 2) * 5}
           startGame={this.startGame}
         />
       );
     }
 
     return (
-      <div className="game-area">
-        <Snake snakeDots={snakeDots} />
-        <Food food={food} />
-      </div>
+      <>
+        <div className="game-area">
+          <Snake snakeDots={snakeDots} />
+          <Food food={food} />
+        </div>
+        <div className="footer">
+          <div className="score-board">{`CURRENT SCORE - ${(snakeDots.length -
+            2) *
+            5}`}</div>
+          <div className="score-board">{`BEST SCORE - ${bestScore}`}</div>
+        </div>
+      </>
     );
   }
 }

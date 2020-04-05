@@ -1,8 +1,9 @@
 .game-area {
   position: relative;
   margin: 50px auto;
-  height: 600px;
-  width: 600px;
+  margin-bottom: 8px;
+  height: 500px;
+  width: 500px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,20);
   background: rgb(142,218,233);
   background: radial-gradient(circle, rgba(142,218,233,1) 0%, rgba(29,238,203,1) 0%, rgba(97,97,209,1) 100%);
@@ -77,6 +78,28 @@
 
 .game-over-container {
   font-size: 40px;
+  margin-bottom: 20px;
+  background: -webkit-linear-gradient(#eee, #83ffe1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer {
+  width: 500px;
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,20);
+  border-radius: 10px; 
+  margin-top: 0px;
+  background: rgb(142,218,233);
+  background: radial-gradient(circle, rgba(142,218,233,1) 0%, rgba(29,238,203,1) 0%, rgba(97,97,209,1) 100%);
+}
+
+.score-board {
+  margin: 15px;
+  font-size: 20px;
   margin-bottom: 20px;
   background: -webkit-linear-gradient(#eee, #83ffe1);
   -webkit-background-clip: text;
