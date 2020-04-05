@@ -2,9 +2,12 @@
 
 # Submission
 
-Game URL: _____
+Game URL: https://snake-game-sam.netlify.com/
 
-Mockup URL: _____
+Mockup URL: https://xd.adobe.com/view/8316c6f9-5987-4418-6eed-2b1136236ec9-f527/grid
+
+- Referred to this tutorial on youtube to build the app 
+https://www.youtube.com/watch?v=-oOgsGP3t5o
 
 ## How to do the question
 - Make a new branch `snake-game`.
