@@ -11,8 +11,8 @@
 
 .snake-dot {
   position: absolute;
-  width: 2%;
-  height: 2%;
+  width: 4%;
+  height: 4%;
   background: rgb(127,138,228);
   background: radial-gradient(circle, rgba(127,138,228,1) 0%, rgba(29,238,203,1) 0%, rgba(27,27,69,1) 100%);
   border-radius: 50%;
@@ -21,8 +21,8 @@
 
 .snake-food {
   position: absolute;
-  width: 2%;
-  height: 2%;
+  width: 4%;
+  height: 4%;
   border-radius: 50%;
   background: rgb(238,29,42);
   background: linear-gradient(90deg, rgba(238,29,42,1) 0%, rgba(27,29,69,1) 100%);

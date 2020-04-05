@@ -5,7 +5,9 @@ import Snake from './components/Snake';
 import Food from './components/Food';
 import InstructionBoard from './components/InstructionBoard';
 
-const DOT_SIZE = 2;
+const DOT_SIZE = 4;
+
+const MAX_SIZE = 100 - DOT_SIZE;
 
 const getRandomPosition = (max, min) => {
   const x =
@@ -18,7 +20,7 @@ const getRandomPosition = (max, min) => {
 const initialState = {
   alive: false,
   gameCount: 0,
-  food: getRandomPosition(1, 98),
+  food: getRandomPosition(1, MAX_SIZE),
   speed: 200,
   direction: 'RIGHT',
   snakeDots: [[0, 0], [DOT_SIZE, 0]],
@@ -112,7 +114,7 @@ class App extends React.PureComponent {
 
   onGameOver() {
     const {gameCount, snakeDots, bestScore} = this.state;
-    const currentScore = snakeDots.length - 2;
+    const currentScore = (snakeDots.length - 2) * 5;
     this.setState({
       alive: false,
       gameCount: gameCount + 1,
@@ -125,7 +127,7 @@ class App extends React.PureComponent {
     const head = snakeDots[snakeDots.length - 1];
     if (head[0] === food[0] && head[1] === food[1]) {
       this.setState({
-        food: getRandomPosition(1, 98),
+        food: getRandomPosition(1, MAX_SIZE),
       });
       this.enlargeSnake();
     }
