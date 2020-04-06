@@ -1,0 +1,107 @@
+.game-area {
+  position: relative;
+  margin: 50px auto;
+  margin-bottom: 8px;
+  height: 500px;
+  width: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,20);
+  background: rgb(142,218,233);
+  background: radial-gradient(circle, rgba(142,218,233,1) 0%, rgba(29,238,203,1) 0%, rgba(97,97,209,1) 100%);
+}
+
+.snake-dot {
+  position: absolute;
+  width: 4%;
+  height: 4%;
+  background: rgb(127,138,228);
+  background: radial-gradient(circle, rgba(127,138,228,1) 0%, rgba(29,238,203,1) 0%, rgba(27,27,69,1) 100%);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.snake-food {
+  position: absolute;
+  width: 4%;
+  height: 4%;
+  border-radius: 50%;
+  background: rgb(238,29,42);
+  background: linear-gradient(90deg, rgba(238,29,42,1) 0%, rgba(27,29,69,1) 100%);
+  z-index: 1;
+}
+
+.start-board {
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,20);
+  border-radius: 10px; 
+  background: rgb(142,218,233);
+  background: radial-gradient(circle, rgba(142,218,233,1) 0%, rgba(29,238,203,1) 0%, rgba(97,97,209,1) 100%);
+}
+
+.gradient-button {
+  margin: 10px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 20px;
+  padding: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: #FFF;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 25px;
+  background-image: linear-gradient(to right, #2BC0E4 0%, #EAECC6 51%, #2BC0E4 100%)
+}
+
+.gradient-button:hover{
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  margin: 8px 10px 12px;
+}
+
+.score-container {
+   font-size: 72px;
+  background: -webkit-linear-gradient(#eee, #83ffe1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.game-over-container {
+  font-size: 40px;
+  margin-bottom: 20px;
+  background: -webkit-linear-gradient(#eee, #83ffe1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer {
+  width: 500px;
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,20);
+  border-radius: 10px; 
+  margin-top: 0px;
+  background: rgb(142,218,233);
+  background: radial-gradient(circle, rgba(142,218,233,1) 0%, rgba(29,238,203,1) 0%, rgba(97,97,209,1) 100%);
+}
+
+.score-board {
+  margin: 15px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  background: -webkit-linear-gradient(#eee, #83ffe1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
